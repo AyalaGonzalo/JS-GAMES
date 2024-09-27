@@ -10,21 +10,19 @@ canvas.height = HEIGHT
 
 const game = new Game()
 
-let lastTime = 0
+
 let inter = 0
-let maxInter = 100
-function animate(timeStamp){
+let maxInter = 50
+
+game.render(ctx);
+function animate(){
 
     inter++
     console.log(inter)
     if(inter > maxInter){
 
         ctx.clearRect(0,0, canvas.width, canvas.height)
-      
-        const deltaTime = timeStamp - lastTime
-        lastTime = timeStamp
-    
-        game.render(ctx, deltaTime)
+        game.render(ctx)
         inter = 0
 
     }

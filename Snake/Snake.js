@@ -12,8 +12,8 @@ export class Snake
         }
         this.pos = 
         {
-            x: 0,
-            y: 0
+            x: 5,
+            y: 5
         }
 
         this.vel = 
@@ -22,7 +22,7 @@ export class Snake
              y: 0 
         }
         this.length = 3
-        this.segments = [{x: this.pos.x, y: this.pos.y},{x: this.pos.x, y: this.pos.y}]
+        this.segments = [{x: this.pos.x, y: this.pos.y},{x: 4, y: this.pos.y}]
 
     }
 
@@ -38,7 +38,7 @@ export class Snake
         
     }
 
-    update(deltaTime)
+    update()
     {
 
         this.pos.x += this.vel.x

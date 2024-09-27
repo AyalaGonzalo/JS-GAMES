@@ -22,7 +22,7 @@ export class Game
 
     update(deltaTime)
     {
-        this.snake.update()
+        this.snake.update(deltaTime)
     }
 	
 	render(ctx, deltaTime){
