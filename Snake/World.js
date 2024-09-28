@@ -30,7 +30,8 @@ export class World
 
         for(let col = 0; col < COLS; col++)
         {
-            for(let row = 0; row < ROWS; row++){
+            for(let row = 0; row < ROWS; row++)
+            {
 
                 ctx.strokeStyle = 'white'
                 ctx.strokeRect(col * TILE_SIZE, row * TILE_SIZE, TILE_SIZE, TILE_SIZE)

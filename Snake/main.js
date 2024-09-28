@@ -12,14 +12,15 @@ const game = new Game()
 
 
 let inter = 0
-let maxInter = 50
+let maxInter = 25
 
 game.render(ctx);
-function animate(){
+function animate()
+{
 
     inter++
-    console.log(inter)
-    if(inter > maxInter){
+    if(inter > maxInter)
+    {
 
         ctx.clearRect(0,0, canvas.width, canvas.height)
         game.render(ctx)
