@@ -1,4 +1,4 @@
-import { Snake } from '/Snake.js'
+
 import { World } from '/World.js'
 
 export class Game
@@ -8,28 +8,29 @@ export class Game
     {
 
         this.world = new World()
-        this.snake = new Snake(this)
+    
 
     }
 
     draw(ctx)
     {
 
-        this.snake.draw(ctx)
+     
         this.world.draw(ctx)
         
     }
 
-    update(deltaTime)
+    update()
     {
-        this.snake.update(deltaTime)
+        this.world.update()
+      
     }
 	
-	render(ctx, deltaTime){
+	render(ctx){
 
        
         this.draw(ctx)
-        this.update(deltaTime)
+        this.update()
 
     }
 	

@@ -1,3 +1,5 @@
+import { Fruit } from "/Fruit.js"
+import { Snake } from '/Snake.js'
 import { COLS, ROWS, TILE_SIZE } from "/enums.js"
 
 export class World
@@ -6,6 +8,8 @@ export class World
     constructor()
     {
 
+        this.fruit = new Fruit({x: 3, y: 3})
+        this.snake = new Snake()
         this.map = 
         [   
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -20,7 +24,6 @@ export class World
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         ]
 
-        this.fruit
 
     }
 
@@ -28,6 +31,7 @@ export class World
     draw(ctx)
     {
 
+       
         for(let col = 0; col < COLS; col++)
         {
             for(let row = 0; row < ROWS; row++)
@@ -40,10 +44,24 @@ export class World
             }
         }
 
+        this.fruit.draw(ctx)
+        this.snake.draw(ctx)
     }
 
     update()
     {
+
+        this.snake.update()
+
+        if(this.snake.posX === this.fruit.posX && this.snake.posY === this.fruit.posY){
+
+            
+            this.snake.segments = {
+                    x:this.snake.segments[this.snake.segments.length - 1].x, 
+                    y:this.snake.segments[this.snake.segments.length - 1].y}
+
+        }
+
 
     }
 
