@@ -36,6 +36,7 @@ export class Fruit {
     draw(ctx)
     {
 
+     
         ctx.fillStyle = "green"
         ctx.fillRect(this.#pos.x * TILE_SIZE, this.#pos.y * TILE_SIZE, this.#size.x, this.#size.y)
 

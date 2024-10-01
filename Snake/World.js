@@ -1,3 +1,4 @@
+import { fruitNewPos } from "/Utils/fruitNewPos.js"
 import { Fruit } from "/Fruit.js"
 import { Snake } from '/Snake.js'
 import { COLS, ROWS, TILE_SIZE } from "/enums.js"
@@ -53,12 +54,24 @@ export class World
 
         this.snake.update()
 
-        if(this.snake.posX === this.fruit.posX && this.snake.posY === this.fruit.posY){
+        if(this.snake.posX === this.fruit.posX && this.snake.posY === this.fruit.posY)
+        {
 
             
-            this.snake.segments = {
+            this.snake.segments = 
+            {
                     x:this.snake.segments[this.snake.segments.length - 1].x, 
-                    y:this.snake.segments[this.snake.segments.length - 1].y}
+                    y:this.snake.segments[this.snake.segments.length - 1].y
+            }
+
+          
+            let fruitPos = fruitNewPos(this.snake.segments)
+
+            console.log(fruitPos)
+
+            this.fruit.posX = fruitPos.x
+            this.fruit.posY = fruitPos.y
+
 
         }
 
